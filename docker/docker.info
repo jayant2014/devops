@@ -1,3 +1,37 @@
 ####################################
 Docker Commands
 ####################################
+1. Build a container
+docker build . -t helloworld
+
+2. Check the images
+docker images | grep helloworld
+
+3. Run an image
+docker run helloworld
+docker run -it --name helloworldcontainer helloworld
+
+4. Check the running processes
+docker ps
+
+5. Remove an image
+docker rmi -f b8650796e4e5
+docker rmi -f $(docker images)
+
+6. Stop a container
+docker stop b8650796e4e5
+
+7. Remove a container
+docker rm ae436a57b1e9
+
+8. Run multiple containers
+docker run helloworld hellowrold1
+
+9. Docker pull
+docker pull tomcat
+
+10. Docker push
+docker push $REGISTRY_HOST:5000/${IMAGE}:${BRANCH}
+
+11. Tag an image
+docker tag helloworld $REGISTRY_HOST:5000/helloworld:0.1 
